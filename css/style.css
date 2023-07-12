@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(115deg, rgba(203, 203, 203, 0.8), rgba(203, 203, 224, 0.8));
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="email"] {
+    width: 65%;
+    height: 25px;
+}
+
+.container {
+    background-color: #fff;
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
+
+.form-group {
+    display: block;
+    padding: 10px;
+}
+
+.question {
+    display: block;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+}
+
+/* Name div */
+
+.name-container {
+    display: flex;
+    width: 65%;
+}
+
+.name-container>div:nth-child(1) {
+    width: 60%;
+}
+
+.name-container>div:nth-child(2) {
+    margin-left: 20px;
+    width: 60%;
+}
+
+.name-container input[type="text"] {
+    display: block;
+    width: 100%;
+    height: 25px;
+}
+
+.name-container label {
+    display: block;
+}
+
+
+/* Star Rating */
+
+.rating {
+    display: inline-block;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    float: right;
+    cursor: pointer;
+    color: #ccc;
+    padding: 0;
+}
+
+.rating label:before {
+    content: "\2605";
+    font-size: 24px;
+}
+
+.rating input:checked~label {
+    color: #ffca08;
+}
+
+.description {
+    display: block;
+    font-size: .85rem;
+}
+
+/* Table */
+
+table {
+    table-layout: fixed;
+    background-color: #f5f5f5;
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+th,
+td {
+    padding: 15px;
+}
+
+td {
+    border: none;
+    padding: 2px;
+}
+
+th {
+    font-size: 13px;
+    text-align: center;
+    background-color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #fff;
+}
+
+table input[type="radio"] {
+    justify-content: center;
+}
+
+.feedback {
+    font-size: 13px;
+}
+
+.radio-btn {
+    text-align: center;
+}
+
+.submit {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: #d5d5d5;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #e3e3e3;
+}
+
+/* Submission Page */
+
+.submission>h1 {
+    text-align: left;
+}
+
+/* Hide table headers on small screens */
+@media only screen and (max-width: 480px) {
+    table thead {
+        display: none;
+    }
+}
+
+/* Display table rows as blocks for better readability on small screens */
+@media only screen and (max-width: 480px) {
+    table {
+        background-color: #fff;
+    }
+
+    table,
+    table tbody,
+    table tr,
+    table td {
+        display: block;
+        width: 100%;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+    }
+
+    .feedback {
+        font-weight: bold;
+    }
+
+    .radio-btn {
+        text-align: left;
+        padding: 6px;
+        border: none;
+        position: relative;
+    }
+
+    .radio-btn:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        padding-left: 10px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+}
+
+/* Display name inputs in flex columns on small screens */
+@media only screen and (max-width: 740px) {
+    .name-container {
+        flex-direction: column;
+    }
+
+    .name-container>div:nth-child(1) {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .name-container>div:nth-child(2) {
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+}
